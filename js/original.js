@@ -1,104 +1,43 @@
-$(function() {
+//ハンバーガーメニューのボタンとハンバーガーメニュー本体にアクティブを付与
+$(".openbtn1").click(function() {
+    $(this).toggleClass('active');
+    $(".header_menu").toggleClass('active');
+});
 
-    // animation呼び出し
-    if ($('.js-scroll-trigger').length) {
-        scrollAnimation();
+//スクロールすると上部に固定させるための設定を関数でまとめる
+function FixedAnime() {
+    var headerH = $('.header').outerHeight(true); //.header_navのtopと同じ数値で減算させないとガクっとする
+    var header_navH = $('.header_nav').outerHeight(true) - 25; //.header_navのtopと同じ数値で減算させないとガクっとする
+    var scroll = $(window).scrollTop();
+    if (scroll >= header_navH) { //header_navの高さ以上になったら
+        $('.header_nav').addClass('fixed'); //fixedというクラス名を付与
+    } else { //それ以外は
+        $('.header_nav').removeClass('fixed'); //fixedというクラス名を除去
     }
-
-    // animation関数
-    function scrollAnimation() {
-        $(window).scroll(function() {
-            // $(".js-scroll-trigger").each(function() {
-            //     let position = $(this).offset().top,
-            //         scroll = $(window).scrollTop(),
-            //         windowHeight = $(window).height();
-
-            //     if (scroll > position - windowHeight + 200) {
-            //         $(this).addClass('is-active');
-            //     }
-            // });
-            $(".js-scroll--200").each(function() {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
-
-                if (scroll > position - windowHeight + 200) {
-                    $(this).addClass('is-active');
-                }
-            });
-            $(".js-scroll--300").each(function() {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
-
-                if (scroll > position - windowHeight + 300) {
-                    $(this).addClass('is-active');
-                }
-            });
-            $(".js-scroll--400").each(function() {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
-
-                if (scroll > position - windowHeight + 400) {
-                    $(this).addClass('is-active');
-                }
-            });
-            $(".js-scroll--500").each(function() {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
-
-                if (scroll > position - windowHeight + 500) {
-                    $(this).addClass('is-active');
-                }
-            });
-            $(".js-scroll--600").each(function() {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
-
-                if (scroll > position - windowHeight + 600) {
-                    $(this).addClass('is-active');
-                }
-            });
-            $(".js-scroll--700").each(function() {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
-
-                if (scroll > position - windowHeight + 700) {
-                    $(this).addClass('is-active');
-                }
-            });
-            $(".js-scroll--800").each(function() {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
-
-                if (scroll > position - windowHeight + 800) {
-                    $(this).addClass('is-active');
-                }
-            });
-            $(".js-scroll--900").each(function() {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
-
-                if (scroll > position - windowHeight + 900) {
-                    $(this).addClass('is-active');
-                }
-            });
-            $(".js-scroll--1000").each(function() {
-                let position = $(this).offset().top,
-                    scroll = $(window).scrollTop(),
-                    windowHeight = $(window).height();
-
-                if (scroll > position - windowHeight + 1000) {
-                    $(this).addClass('is-active');
-                }
-            });
-        });
+    if (scroll >= headerH) { //header_navの高さ以上になったら
+        $('.header_nav').addClass('change'); //fixedというクラス名を付与
+        $('.openbtn1 span').addClass('change'); //fixedというクラス名を付与
+    } else { //それ以外は
+        $('.header_nav').removeClass('change'); //fixedというクラス名を除去
+        $('.openbtn1 span').removeClass('change'); //fixedというクラス名を除去
     }
-    $(window).trigger('scroll');
+}
+
+//ナビゲーションをクリックした際のスムーススクロール
+$('.header_menu a').click(function() {
+    var elmHash = $(this).attr('href'); //hrefの内容を取得
+    var pos = Math.round($(elmHash).offset().top - 120); //headerの高さを引く
+    $('body,html').animate({ scrollTop: pos }, 500); //取得した位置にスクロール※数値が大きいほどゆっくりスクロール
+    return false; //リンクの無効化
+});
+
+
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).scroll(function() {
+    FixedAnime(); /* スクロール途中からヘッダーを出現させる関数を呼ぶ*/
+});
+
+// ページが読み込まれたらすぐに動かしたい場合の記述
+$(window).on('load', function() {
+    FixedAnime(); /* スクロール途中からヘッダーを出現させる関数を呼ぶ*/
 });

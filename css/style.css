@@ -1,6 +1,375 @@
-#wrapper {
-  max-width: 1280px;
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+#content_wrapper {
+  max-width: 960px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+#content_wrapper h2 {
+  position: relative;
+  width: 960px;
+  text-align: center;
+  font-size: 36px;
+  font-family: "Poppins", myriad-pro, sans-serif;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+}
+#content_wrapper h2::after {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  width: 40px;
+  height: 1px;
+  background: #2b2b2b;
+  transform: translateX(-50%);
+}
+#content_wrapper p {
+  width: auto;
+  text-align: center;
+  font-size: 16px;
+  font-family: myriad-pro, sans-serif;
+  line-height: 1.8;
+  letter-spacing: 1.4px;
+  padding-bottom: 40px;
+}
+
+#nav_wrapper {
+  max-width: 960px;
+  min-height: 100%;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  width: 100%;
+  height: 620px;
+  background: url("../image/header.png");
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
+.header h1 {
+  font-family: myriad-pro, sans-serif;
+}
+
+.header_nav {
+  position: absolute;
+  width: 100%;
+  height: 64px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+  transition: 0s;
+}
+
+.header_nav.fixed {
+  position: fixed;
+  /*最前面へ*/
+  top: 0px;
+}
+
+.header_nav.change {
+  transition: 0.2s;
+  color: #000;
+  border-bottom: solid 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.header_nav_logo {
+  position: relative;
+  left: 350px;
+  font-size: 36px;
+}
+
+/*ボタン外側*/
+.openbtn1 {
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  right: 350px;
+  border-radius: 5px;
+}
+
+/*ボタン内側*/
+.openbtn1 span {
+  display: inline-block;
+  transition: all 0.3s;
+  /*アニメーションの設定*/
+  position: absolute;
+  left: 14px;
+  height: 1px;
+  border-radius: 2px;
+  background: #fff;
+  width: 70%;
+  transition: 0.2s;
+}
+
+.openbtn1 span.change {
+  background: #000;
+}
+
+.openbtn1 span:nth-of-type(1) {
+  top: 15px;
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top: 23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top: 31px;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+.openbtn1.active span:nth-of-type(1) {
+  top: 18px;
+  left: 14px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 70%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+  /*真ん中の線は透過*/
+}
+
+.openbtn1.active span:nth-of-type(3) {
+  top: 30px;
+  left: 14px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 70%;
+}
+
+.header_menu {
+  position: absolute;
+  background-color: white;
+  width: 100vw;
+  height: 0px;
+  overflow: hidden;
+  top: 64px;
+  z-index: 999;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.header_menu li {
+  line-height: 11vh;
+  text-align: center;
+  font-size: 18px;
+  border-top: 1px solid #ccc;
+}
+.header_menu a {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+
+.header_menu.active {
+  height: 100vh;
+}
+
+.header_title {
+  position: absolute;
+  width: 960px;
+  height: 120px;
+  top: 240px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.header_title h1 {
+  height: 100%;
+  font-size: 120px;
+  padding-bottom: 40px;
+}
+.header_title p::after {
+  content: "―";
+}
+.header_title p::before {
+  content: "―";
+}
+
+.concept {
+  background: linear-gradient(#fff 70%, #ededed 30%);
+}
+
+.concept #content_wrapper {
+  display: flex;
   flex-flow: column;
+  align-items: center;
+}
+.concept #content_wrapper img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.work {
+  padding-bottom: 0px;
+}
+
+.work_contents {
+  width: 100%;
+  height: 1600px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.work_content {
+  width: 420px;
+  padding-top: 20px;
+}
+.work_content h3 {
+  font-size: 24px;
+}
+.work_content p {
+  letter-spacing: 1.4px;
+}
+.work_content img {
+  padding-bottom: 20px;
+}
+
+.work_content_1 {
+  padding-top: 0px;
+  padding-right: 120px;
+}
+.work_content_1 img {
+  height: 420px;
+}
+
+.work_content_2 img {
+  height: 630px;
+}
+
+.work_content_3 {
+  margin-top: 120px;
+}
+.work_content_3 img {
+  height: 630px;
+}
+
+.work_content_4 ima {
+  height: 400px;
+}
+
+.florist {
+  background: linear-gradient(#ededed 60%, #fff 40%);
+}
+
+.florist_contents {
+  display: flex;
+  justify-content: center;
+}
+
+.florist_content {
+  width: 300px;
+  height: 340px;
+  padding-right: 30px;
+}
+.florist_content img {
+  margin-bottom: 10px;
+}
+
+.florist_content_3 {
+  padding-right: 0px;
+}
+
+.shopInformation_contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shopInformation_contents img {
+  width: 480px;
+}
+
+.shopInformation_inner {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 430px;
+  height: 300px;
+}
+
+.shopInformation_content {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.shopInformation_content_title {
+  width: 25%;
+  height: 100%;
+}
+
+.shopInformation_content_line {
+  width: 1px;
+  height: 100%;
+  background: #a0a0a0;
+  margin-right: 10px;
+}
+
+.shopInformation_content_info {
+  width: 75%;
+  line-height: 2;
+  letter-spacing: 1.4px;
+}
+
+.contactUs {
+  width: 100%;
+  height: 450px;
+  background: no-repeat url("../image/contact_us.png");
+  background-size: cover;
+}
+
+.contactUs #content_wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactUs_btn {
+  width: 360px;
+  height: 80px;
+  background-color: white;
+  text-align: center;
+  border: solid 1px #a0a0a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contactUs_btn p {
+  font-size: 20px;
+  padding-bottom: 0px !important;
+}
+
+.mail {
+  padding-right: 20px;
+}
+
+.footer_inner {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer_inner h4 {
+  font-size: 12px;
+  letter-spacing: 1.2px;
 }
