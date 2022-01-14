@@ -1,20 +1,28 @@
-<!-- 2022.01.11 -->
-<!-- 作成開始 -->
-<!-- カンプ
+<!-- 作成開始2022.01.11 -->
+<!-- 作業ひとまず完了2022.01.13 -->
+<!-- 作業時間 約8時間 -->
+<!-- デザイン制作者 
+akane (@omsss22)
+https://twitter.com/omsss22 -->
+<!-- 参考サイト
 https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
+<!-- 【メモ】 -->
+<!-- ・sessionのclassをid化した方がいいかも？ -->
+<!-- ・_1,_2,_3とかのクラス名はやめたい -->
+<!-- →特にWork部分は奇数偶数で要素を取りたい -->
+<!-- ・レスポンシブ対応するべき？ -->
+<!-- ・alt付けた方がいい？ -->
 
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
-    <!-- css_original -->
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
-    <title>ひろちゃんポートフォリオ</title>
+    <title>Shiro</title>
 </head>
 
 <body>
-    <!-- header -->
     <header class="header">
         <div class="header_nav">
             <h1 class="header_nav_logo">
@@ -23,19 +31,19 @@ https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
             <div class="openbtn1"><span></span><span></span><span></span></div>
             <ul class="header_menu">
                 <li class="header_menu_item">
-                    <a href="">Concept</a>
+                    <a href="#concept">Concept</a>
                 </li>
                 <li class="header_menu_item">
-                    <a href="">Work</a>
+                    <a href="#work">Work</a>
                 </li>
                 <li class="header_menu_item">
-                    <a href="">Florist</a>
+                    <a href="#florist">Florist</a>
                 </li>
                 <li class="header_menu_item">
-                    <a href="">Shop information</a>
+                    <a href="#shopinformation">Shop information</a>
                 </li>
                 <li class="header_menu_item">
-                    <a href="">Contact us</a>
+                    <a href="#contact">Contact us</a>
                 </li>
             </ul>
         </div>
@@ -50,9 +58,7 @@ https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
             </div>
         </div>
     </header>
-    <!-- header終わり -->
-    <!-- メインビュー -->
-    <section class="concept">
+    <section id="concept" class="concept">
         <div id="content_wrapper">
             <h2>
                 Concept
@@ -64,7 +70,7 @@ https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
             <img src="image/concept.png">
         </div>
     </section>
-    <section class="work">
+    <section id="work" class="work">
         <div id="content_wrapper">
             <h2>
                 Work
@@ -84,7 +90,6 @@ https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
                     </p>
                 </div>
                 <div class="work_content work_content_2">
-
                     <img src="image/work_wedding.png">
                     <h3>
                         Wedding
@@ -114,7 +119,7 @@ https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
             </div>
         </div>
     </section>
-    <section class="florist">
+    <section id="florist" class="florist">
         <div id="content_wrapper">
             <h2>
                 Florist
@@ -153,7 +158,7 @@ https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
             </div>
         </div>
     </section>
-    <section class="shopInformation">
+    <section id="shopinformation" class="shopInformation">
         <div id="content_wrapper">
             <h2>
                 Shop information
@@ -161,7 +166,6 @@ https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
             <p>
                 Shiroの店舗情報をご紹介します。
             </p>
-
             <div class="shopInformation_contents">
                 <img src="image/shop_information.png">
                 <div class="shopInformation_inner">
@@ -205,7 +209,7 @@ https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
             </div>
         </div>
     </section>
-    <section class="contactUs">
+    <section id="contact" class="contactUs">
         <div id="content_wrapper">
             <h2>
                 Contact us
@@ -213,25 +217,20 @@ https://note.com/tmy_schaf/n/n49a9b727c5b1 -->
             <p>
                 イベントや結婚式でご利用する装花のご相談や、<br> フラワーアレンジメントのご予約などはこちらからお問い合わせください。
             </p>
-            <div class="contactUs_btn">
-                <div class="mail">メ</div>
-                <p>お問い合わせ</p>
-            </div>
+            <a class="contactUs_btn_contact" href="#">
+                <div class="contactUs_btn">
+                    <img class="contactUs_btn_image" src="image/letter.png">
+                    <p>お問い合わせ</p>
+                </div>
+            </a>
         </div>
     </section>
-    <!-- メインビュー終わり -->
-    <!-- footer -->
     <footer>
         <div class="footer_inner">
             <h4>Copyright © Shiro All Rights Reserved.</h4>
         </div>
     </footer>
-    <!-- footer終わり -->
-
-    <!-- 各種読み込み -->
-    <!-- jquery -->
     <script type="text/javascript" src="js\jquery-3.6.0.min.js"></script>
-    <!-- original -->
     <script type="text/javascript" src="js/original.js"></script>
 </body>
 

@@ -2,14 +2,12 @@
 <html lang="ja">
 
 <head>
-    <!-- css_original -->
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
-    <title>ひろちゃんポートフォリオ</title>
+    <title>Shiro</title>
 </head>
 
 <body>
-    <!-- header -->
     <header class="header">
         <div class="header_nav">
             <h1 class="header_nav_logo">
@@ -18,19 +16,19 @@
             <div class="openbtn1"><span></span><span></span><span></span></div>
             <ul class="header_menu">
                 <li class="header_menu_item">
-                    <a href="">Concept</a>
+                    <a href="#concept">Concept</a>
                 </li>
                 <li class="header_menu_item">
-                    <a href="">Work</a>
+                    <a href="#work">Work</a>
                 </li>
                 <li class="header_menu_item">
-                    <a href="">Florist</a>
+                    <a href="#florist">Florist</a>
                 </li>
                 <li class="header_menu_item">
-                    <a href="">Shop information</a>
+                    <a href="#shopinformation">Shop information</a>
                 </li>
                 <li class="header_menu_item">
-                    <a href="">Contact us</a>
+                    <a href="#contact">Contact us</a>
                 </li>
             </ul>
         </div>
@@ -45,9 +43,7 @@
             </div>
         </div>
     </header>
-    <!-- header終わり -->
-    <!-- メインビュー -->
-    <section class="concept">
+    <section id="concept" class="concept">
         <div id="content_wrapper">
             <h2>
                 Concept
@@ -59,7 +55,7 @@
             <img src="image/concept.png">
         </div>
     </section>
-    <section class="work">
+    <section id="work" class="work">
         <div id="content_wrapper">
             <h2>
                 Work
@@ -109,7 +105,7 @@
             </div>
         </div>
     </section>
-    <section class="florist">
+    <section id="florist" class="florist">
         <div id="content_wrapper">
             <h2>
                 Florist
@@ -148,7 +144,7 @@
             </div>
         </div>
     </section>
-    <section class="shopInformation">
+    <section id="shopinformation" class="shopInformation">
         <div id="content_wrapper">
             <h2>
                 Shop information
@@ -200,7 +196,7 @@
             </div>
         </div>
     </section>
-    <section class="contactUs">
+    <section id="contact" class="contactUs">
         <div id="content_wrapper">
             <h2>
                 Contact us
@@ -208,25 +204,20 @@
             <p>
                 イベントや結婚式でご利用する装花のご相談や、<br> フラワーアレンジメントのご予約などはこちらからお問い合わせください。
             </p>
-            <div class="contactUs_btn">
-                <div class="mail">メ</div>
-                <p>お問い合わせ</p>
-            </div>
+            <a class="contactUs_btn_contact" href="#">
+                <div class="contactUs_btn">
+                    <img class="contactUs_btn_image" src="image/letter.png">
+                    <p>お問い合わせ</p>
+                </div>
+            </a>
         </div>
     </section>
-    <!-- メインビュー終わり -->
-    <!-- footer -->
     <footer>
         <div class="footer_inner">
             <h4>Copyright © Shiro All Rights Reserved.</h4>
         </div>
     </footer>
-    <!-- footer終わり -->
-
-    <!-- 各種読み込み -->
-    <!-- jquery -->
     <script type="text/javascript" src="js\jquery-3.6.0.min.js"></script>
-    <!-- original -->
     <script type="text/javascript" src="js/original.js"></script>
 </body>
 

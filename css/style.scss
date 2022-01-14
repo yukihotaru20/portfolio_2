@@ -4,7 +4,6 @@
 }
 
 section {
-    // height: 900px;
     padding: 80px 0;
 }
 
@@ -77,7 +76,6 @@ section {
 
 .header_nav.fixed {
     position: fixed;
-    /*最前面へ*/
     top: 0px;
 }
 
@@ -95,9 +93,7 @@ section {
     font-size: 36px;
 }
 
-
-/*ボタン外側*/
-
+// ボタン外側
 .openbtn1 {
     position: relative;
     cursor: pointer;
@@ -107,13 +103,11 @@ section {
     border-radius: 5px;
 }
 
-
-/*ボタン内側*/
-
+// ボタン内側
 .openbtn1 span {
     display: inline-block;
     transition: all .3s;
-    /*アニメーションの設定*/
+    // アニメーションの設定
     position: absolute;
     left: 14px;
     height: 1px;
@@ -139,9 +133,7 @@ section {
     top: 31px;
 }
 
-
-/*activeクラスが付与されると線が回転して×に*/
-
+// activeクラスが付与されると線が回転して×に
 .openbtn1.active span:nth-of-type(1) {
     top: 18px;
     left: 14px;
@@ -150,8 +142,7 @@ section {
 }
 
 .openbtn1.active span:nth-of-type(2) {
-    opacity: 0;
-    /*真ん中の線は透過*/
+    opacity: 0; // 真ん中の線は透過
 }
 
 .openbtn1.active span:nth-of-type(3) {
@@ -183,7 +174,6 @@ section {
     }
 }
 
-// ハンバーガーメニュークリック時
 .header_menu.active {
     height: 100vh;
 }
@@ -249,7 +239,8 @@ section {
     padding-top: 20px;
 }
 
-// ここ奇数/偶数で判定したい
+// _1,_2,_3というクラス名はあまり好ましくない
+// 奇数/偶数で判定したい
 .work_content_1 {
     img {
         height: 420px;
@@ -295,7 +286,8 @@ section {
     }
 }
 
-// _1,_2,_3というクラス名じゃなく、最後の要素だけに掛かるようにしたい
+// _1,_2,_3というクラス名はあまり好ましくない
+// 動作的には最後の要素だけ取れればそれでよい
 // $last_of_type？だったかな
 .florist_content_3 {
     padding-right: 0px;
@@ -356,6 +348,11 @@ section {
     justify-content: center;
 }
 
+.contactUs_btn_contact {
+    color: #2b2b2b;
+    text-decoration: none;
+}
+
 .contactUs_btn {
     width: 360px;
     height: 80px;
@@ -366,13 +363,12 @@ section {
     align-items: center;
     justify-content: center;
     p {
-        // padding-left: 20px;
         font-size: 20px;
         padding-bottom: 0px !important;
     }
 }
 
-.mail {
+.contactUs_btn_image {
     padding-right: 20px;
 }
 
