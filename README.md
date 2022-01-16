@@ -4,7 +4,7 @@
 作業時間 約10時間<br>
 レスポンシブ非対応<br>
 <br><br><br>
-下記URLで確認できます。<br>
+下記URLで動作確認できます。<br>
 https://yukihotaru20.github.io/portfolio_2/<br>
 <br><br><br><br><br><br><br><br><br><br>
 ----------------------------------------<br>
